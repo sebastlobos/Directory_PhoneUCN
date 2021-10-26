@@ -1,10 +1,19 @@
 package cl.ucn.disc.dsm.slobos.scrapper;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
+import ch.qos.logback.core.util.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,13 +24,19 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class TheMain {
+    /**
+     * The Gson Parser.
+     */
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     /**
      *
-     * @param args
+     * @param args to use.
      * @throws IOException
      */
+
  public static void main(String[] args) throws IOException {
+
      log.debug("Starting the Scrapping ..");
 
      //The id.
@@ -55,7 +70,16 @@ public class TheMain {
              .direccion(direccion)
              .build();
 
-     Funcionario F= new Funcionario(id,nombre,cargo,unidad,email,telefono,oficina,direccion);
+    // The list of Funcionario
+     List<Funcionario> funcionarios = new ArrayList<>();
+
+     //add the funcionario into the list.
+     funcionarios.add(f);
+     FileUtils.writeStringToFile
+             (new File("funcionarios.json"),
+             GSON.toJson(funcionarios),
+             StandardCharsets.UTF_8);
+
      log.debug("Done.");
  }
 }
