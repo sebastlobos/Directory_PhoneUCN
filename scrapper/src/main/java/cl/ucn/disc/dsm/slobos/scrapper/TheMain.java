@@ -108,8 +108,8 @@ public class TheMain {
 
 
 
-    //Save by 3.
-        if(funcionarios.size() % 3 == 0){
+    //Save by 25.
+        if(funcionarios.size() % 25 == 0){
 
             log.debug("Writing{} Funcionarios to file.. ", funcionarios.size());
 
@@ -119,7 +119,7 @@ public class TheMain {
                             GSON.toJson(funcionarios),
                             StandardCharsets.UTF_8);
 
-        }//End if "save by 3".
+        }//End if "save by 25".
         } //End for
 
      log.debug("Done.");
