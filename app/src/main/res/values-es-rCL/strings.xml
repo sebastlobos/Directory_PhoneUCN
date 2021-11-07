@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="acra_dialog_comment">Losiento,/nla aplicacion presenta dificultades,n/porfavor
+        envie un reporte a los desarolladores./nPuedes agregar un comentario</string>
+    <string name="acra_dialog_title">Se ha producido un error</string>
+</resources>

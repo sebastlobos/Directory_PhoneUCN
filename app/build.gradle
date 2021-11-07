@@ -49,15 +49,15 @@ dependencies {
     // debugImplementation because LeakCanary should only run in debug builds.
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
-    //ACRA
+    //ACRA Mail
     implementation("ch.acra:acra-mail:5.8.4")
 
     //ACRA Dialog
     implementation("ch.acra:acra-dialog:5.8.4")
 
     //ACRA Notification
-    implementation("ch.acra:acra-notification:8.5.4")
+    //implementation("ch.acra:acra-notification:8.5.4")
 
     //ACRA Toast
-    implementation("ch.acra:acra-toast:5.8.4")
+    //implementation("ch.acra:acra-toast:5.8.4")
 }
